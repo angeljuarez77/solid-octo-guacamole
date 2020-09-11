@@ -1,0 +1,17 @@
+<p>cpus works!</p>
+<ul>
+  <li *ngFor="let cpu of cpuArray"
+    (click)="chooseCpu(cpu)">
+    <h1>CPU NAME: {{ cpu.name }}</h1>
+    <h2>CPU PRICE: {{ cpu.price }}</h2>
+    <h3>CPU CORES: {{ cpu.cores }}</h3>
+  </li>
+</ul>
+
+<div *ngIf="chosenCpu; else elseBlock">
+  <h1>{{ chosenCpu | json }}</h1>
+</div>
+
+<ng-template #elseBlock>
+  <p>please choose a cpu from the list above</p>
+</ng-template>

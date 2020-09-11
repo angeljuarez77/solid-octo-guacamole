@@ -1,0 +1,16 @@
+<p>motherboards works!</p>
+<ul>
+  <li
+    *ngFor="let motherboard of motherboards"
+    (click)="chooseMotherboard(motherboard)"
+    >
+    <h1>price: {{ motherboard.name }}</h1>
+    <h2>manufacturer: {{ motherboard.manufacturer }}</h2>
+    <h3>name: {{ motherboard.name }}</h3>
+  </li>
+</ul>
+
+<p *ngIf="selectedMotherboard; else elseBlock">{{ selectedMotherboard | json }}</p>
+<ng-template #elseBlock>
+  <p>please choose something from the list above</p>
+</ng-template>

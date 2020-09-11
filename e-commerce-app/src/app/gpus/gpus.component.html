@@ -1,0 +1,19 @@
+<p>gpus works!</p>
+<ul>
+  <li
+    *ngFor="let gpu of gpus"
+    (click)="chooseGpu(gpu)">
+    <h1>GPU NAME: {{ gpu.name }}</h1>
+    <h2>GPU PRICE: {{ gpu.price }}</h2>
+    <h3>GPU RAYTRACING?: {{ gpu.raytracing }}</h3>
+  </li>
+</ul>
+
+<div *ngIf="chosenGpu; else elseBlock">
+  <h1>{{ chosenGpu | json }}</h1>
+  <button>delete</button>
+</div>
+
+<ng-template #elseBlock>
+  <p>please choose a gpu from the list above</p>
+</ng-template>
